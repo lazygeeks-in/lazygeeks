@@ -92,8 +92,8 @@ public class CSVReader {
      * @return - List<String[]> : each array contains each line.
      * @throws IOException
      */
-    public List<String[]> readFile() throws IOException {
-	List<String[]> retValue = new ArrayList<>();
+    public List<Object[]> readFile() throws IOException {
+	List<Object[]> retValue = new ArrayList<>();
 	String line = null;
 
 	// check file exists and readable
@@ -111,7 +111,7 @@ public class CSVReader {
 
 	    // read and return data
 	    while ((line = br.readLine()) != null) {
-		String[] splitData = line.split(SEPERATOR);
+		Object[] splitData = line.split(SEPERATOR);
 		retValue.add(splitData);
 	    }
 	}

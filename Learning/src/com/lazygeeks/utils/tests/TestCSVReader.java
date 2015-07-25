@@ -19,7 +19,7 @@ public class TestCSVReader {
     public void testNoHeaders(){
     	CSVReader csvReader = new CSVReader(FILENAME_NOHEADERS, false);
     	try {
-			List<String[]> retValue = csvReader.readFile();
+			List<Object[]> retValue = csvReader.readFile();
 			Assert.assertEquals(csvReader.getHeaders().length, 0);
 			
 			// Assert size of data 
@@ -34,7 +34,7 @@ public class TestCSVReader {
     @Test
     public void testDataSize(){
 	CSVReader csvReader = new CSVReader(FILENAME, true);
-	List<String[]> retValue;
+	List<Object[]> retValue;
 	try {
 	    retValue = csvReader.readFile();
 	    Assert.assertEquals(retValue.size(),5);
@@ -58,7 +58,7 @@ public class TestCSVReader {
     @Test
     public void testHeaders(){
 	CSVReader csvReader = new CSVReader(FILENAME, true);
-	List<String[]> retValue;
+	List<Object[]> retValue;
 	try {
 	    retValue = csvReader.readFile();
 	    Assert.assertEquals(retValue.size(),5);
@@ -78,7 +78,7 @@ public class TestCSVReader {
     @Test
     public void testDataInFile(){
 	CSVReader csvReader = new CSVReader(FILENAME, true);
-	List<String[]> retValue;
+	List<Object[]> retValue;
 	try {
 	    retValue = csvReader.readFile();
 	    String[][] expectedHeaders={

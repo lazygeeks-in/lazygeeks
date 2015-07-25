@@ -1,6 +1,7 @@
 package com.lazygeeks.parametrizedtests;
 
-import java.util.Arrays;
+import java.io.IOException;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,40 +9,38 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import com.lazygeeks.utils.CSVReader;
+
 /**
  * Learning Parameterized Tests
  */
 @RunWith(value = Parameterized.class)
 public class ParameterizedTests {
 
-    private Calculator obj = null;
-    
-    private int a;
-    private int b;
-    private int expected;
-    
-    
-    public ParameterizedTests(int a, int b, int expected){
-	obj = new Calculator();
-	
-	this.a = a;
-	this.b = b;
-	this.expected = expected;
-    }
-    
-    @Test
-    public void testAdd(){
-	int retValue =  obj.add(a, b);
-	Assert.assertEquals(retValue, expected);
-    }
-    
-    @Parameters(name="add {0}+{1}={2}")
-    public static Iterable<Object[]> getData(){
-	return Arrays.asList(new Object[][] { 
-		{ 1, 1, 2 }, 
-		{ 2, 2, 4 }, 
-		{ 8, 2, 10 }, 
-		{ 4, 5, 9 } 
-	});
-    }
+	private Calculator obj = null;
+
+	private String a;
+	private String b;
+	private String expected;
+
+	public ParameterizedTests(String a, String b, String expected) {
+		obj = new Calculator();
+
+		this.a = a;
+		this.b = b;
+		this.expected = expected;
+	}
+
+	@Test
+	public void testAdd() {
+		int retValue = obj.add(Integer.parseInt(a) , Integer.parseInt(b) );
+		Assert.assertEquals(retValue, Integer.parseInt(expected) );
+	}
+
+	@Parameters(name = "testAdd( {0},{1} )={2}")
+	public static List<Object[]> getData() throws IOException {
+		CSVReader reader = new CSVReader("/resources/ParameterizedTest_inputs.csv", true);
+		List retValue = reader.readFile();
+		return retValue;
+	}
 }
