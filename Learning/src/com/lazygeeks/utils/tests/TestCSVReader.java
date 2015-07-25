@@ -13,6 +13,24 @@ public class TestCSVReader {
     
     private final String FILENAME = "/resources/sample.csv";
     
+    private final String FILENAME_NOHEADERS = "/resources/sample_noheaders.csv";
+    
+    @Test
+    public void testNoHeaders(){
+    	CSVReader csvReader = new CSVReader(FILENAME_NOHEADERS, false);
+    	try {
+			List<String[]> retValue = csvReader.readFile();
+			Assert.assertEquals(csvReader.getHeaders().length, 0);
+			
+			// Assert size of data 
+			Assert.assertEquals(retValue.size(),6);
+		} catch (IOException e) {
+			Assert.fail("File cannot be found");
+			e.printStackTrace();
+		}
+    	
+    }
+    
     @Test
     public void testDataSize(){
 	CSVReader csvReader = new CSVReader(FILENAME, true);

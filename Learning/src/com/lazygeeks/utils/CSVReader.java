@@ -17,7 +17,7 @@ public class CSVReader {
     
     private boolean hasHeaders;
     
-    private String[] headers;
+    private String[] headers = new String[0];
     
     private final String SEPERATOR = ",";
     
