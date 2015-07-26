@@ -93,7 +93,7 @@ public class CSVReader {
      * @throws IOException
      */
     public List<Object[]> readFile() throws IOException {
-	List<Object[]> retValue = new ArrayList<>();
+	List<Object[]> retValue = new ArrayList<Object[]>();
 	String line = null;
 
 	// check file exists and readable
