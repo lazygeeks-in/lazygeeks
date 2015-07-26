@@ -12,6 +12,6 @@ public class Calculator {
      * @return - result 
      */
     public int add(final int a, final int b){
-	return a+b;
+	return a+b ;
     }
 }
