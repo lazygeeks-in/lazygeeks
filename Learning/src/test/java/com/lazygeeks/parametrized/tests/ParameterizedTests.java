@@ -40,7 +40,7 @@ public class ParameterizedTests {
 
 	@Parameters(name = "testAdd( {0},{1} )={2}")
 	public static List<Object[]> getData() throws IOException {
-		CSVReader reader = new CSVReader("/resources/ParameterizedTest_inputs.csv", true);
+		CSVReader reader = new CSVReader("/ParameterizedTest_inputs.csv", true);
 		List retValue = reader.readFile();
 		return retValue;
 	}

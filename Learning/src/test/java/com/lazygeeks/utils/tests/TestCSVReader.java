@@ -11,9 +11,9 @@ import com.lazygeeks.utils.CSVReader;
 
 public class TestCSVReader {
     
-    private final String FILENAME = "/resources/sample.csv";
+    private final String FILENAME = "/sample.csv";
     
-    private final String FILENAME_NOHEADERS = "/resources/sample_noheaders.csv";
+    private final String FILENAME_NOHEADERS = "/sample_noheaders.csv";
     
     @Test
     public void testNoHeaders(){
