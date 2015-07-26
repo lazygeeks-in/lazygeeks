@@ -1,4 +1,4 @@
-package com.lazygeeks.parametrizedtests;
+package com.lazygeeks.parametrized.tests;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import com.lazygeeks.parametrized.Calculator;
 import com.lazygeeks.utils.CSVReader;
 
 /**

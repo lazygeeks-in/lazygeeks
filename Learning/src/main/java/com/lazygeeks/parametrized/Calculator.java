@@ -1,4 +1,4 @@
-package com.lazygeeks.parametrizedtests;
+package com.lazygeeks.parametrized;
 
 /**
  * Performs basic calculator operations
